@@ -1,0 +1,8 @@
+import { createClient } from "@supabase/supabase-js";
+
+// Sozlamalar Vercel'dagi Environment Variables'dan olinadi (kod ichida turmaydi).
+const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
+
+export const db = createClient(url, key);
+export const hasSupabase = Boolean(url && key);

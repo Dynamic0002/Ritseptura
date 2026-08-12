@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --logo-bg: none;
+  --font-archivo: 'Archivo', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html,
+body {
+  background: #f7f6f4;
+  color: #2b2a28;
+}
+
+body {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Logotipli nozik orqa fon (keyin logotip ulanadi) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: var(--logo-bg);
+  background-repeat: repeat;
+  background-size: 132px 132px;
+  opacity: 0.035;
+}
+
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Sklad-list uslubidagi hisob varag'i (ularning bosma varaqlaridan olingan) */
+.sheet-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  border: 1px solid #e6e2dc;
+  border-top: none;
+  font-size: 14px;
+}
+.sheet-row:first-child {
+  border-top: 1px solid #e6e2dc;
+}
+.sheet-row .lbl {
+  font-weight: 600;
+}
+.sheet-row .val {
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+}
